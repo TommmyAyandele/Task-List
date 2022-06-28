@@ -14,6 +14,14 @@ clearBtn.addEventListener('click', clearTasks)
 filter.addEventListener('keyup', filterTasks)
 };
 
+function getTasks() {
+  let tasks;
+  if(localStorage.getItem('tasks') === null){
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+}
 
 function addTask(e){
 if(taskInput.value === ''){
